@@ -91,11 +91,11 @@ export default class P5Renderer implements BaseRenderer{
                 for (let x = xStart; x < w; x++) {
                     let _x = x;
 
-                    let noiseOffset = frameDelta / 2;
+                    let noiseOffset = frameDelta;
                     let offsetY = s.noise(x * 0.01, -noiseOffset + y * 0.01) * 2.5;
                     offsetY = Math.pow(offsetY, 7);
 
-                    let _y = y + Math.sin(frameDelta) * offsetY;
+                    let _y = y - Math.abs(Math.sin(frameDelta) * offsetY);
                     //_y = Math.min(_y, y);
                     s.vertex(_x, _y);
                 }
