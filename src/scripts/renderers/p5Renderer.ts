@@ -71,7 +71,7 @@ export default class P5Renderer implements BaseRenderer{
             let w = xStart + (this.width / 1.5);
             let h = yStart + (this.width / 1.5);
 
-            let yDistance = 5 + Math.cos(frameDelta) * 5;
+            let yDistance = 5 - Math.abs(Math.cos(frameDelta) * 5);
             yDistance = Math.max(0.5, yDistance);
 
             for (let y = yStart; y < h; y+= yDistance) {
